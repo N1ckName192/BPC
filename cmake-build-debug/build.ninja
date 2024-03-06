@@ -49,12 +49,12 @@ cmake_ninja_workdir = C$:/Users/nikit/OneDrive/Рабочий$ стол/192/cmake-build-deb
 
 build cmake_object_order_depends_target_192: phony || cmake_object_order_depends_target_data_structures
 
-build CMakeFiles/192.dir/main.c.obj: C_COMPILER__192_unscanned_Debug C$:/Users/nikit/OneDrive/Рабочий$ стол/192/main.c || cmake_object_order_depends_target_192
-  DEP_FILE = CMakeFiles\192.dir\main.c.obj.d
+build CMakeFiles/192.dir/libs/data_structures/vector/main.c.obj: C_COMPILER__192_unscanned_Debug C$:/Users/nikit/OneDrive/Рабочий$ стол/192/libs/data_structures/vector/main.c || cmake_object_order_depends_target_192
+  DEP_FILE = CMakeFiles\192.dir\libs\data_structures\vector\main.c.obj.d
   FLAGS = -g -std=gnu99 -fdiagnostics-color=always
   INCLUDES = -I"C:/Users/nikit/OneDrive/Рабочий стол/192/libs/data_structures/vector"
   OBJECT_DIR = CMakeFiles\192.dir
-  OBJECT_FILE_DIR = CMakeFiles\192.dir
+  OBJECT_FILE_DIR = CMakeFiles\192.dir\libs\data_structures\vector
 
 
 # =============================================================================
@@ -64,7 +64,7 @@ build CMakeFiles/192.dir/main.c.obj: C_COMPILER__192_unscanned_Debug C$:/Users/n
 #############################################
 # Link the executable 192.exe
 
-build 192.exe: C_EXECUTABLE_LINKER__192_Debug CMakeFiles/192.dir/main.c.obj | libdata_structures.a || libdata_structures.a
+build 192.exe: C_EXECUTABLE_LINKER__192_Debug CMakeFiles/192.dir/libs/data_structures/vector/main.c.obj | libdata_structures.a || libdata_structures.a
   FLAGS = -g
   LINK_LIBRARIES = libdata_structures.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\192.dir

@@ -1,4 +1,4 @@
-#include "libs/data_structures/vector/vector.h"
+#include "vector.h"
 #include <assert.h>
 
 int main() {
