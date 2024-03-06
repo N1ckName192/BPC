@@ -124,4 +124,67 @@ void test_popBack_notEmptyVector() {
     free(v.data);
 }
 
+int *atVector(vector *v, size_t index) {
+    if (index < v->size) {
+        return &v->data[index];
+    } else {
+        fprintf(stderr, "Error: atVector\n", index);
+        exit(1);
+    }
+}
 
+void test_atVector_notEmptyVector() {
+    vector v = createVector(0);
+    pushBack(&v, 10);
+    pushBack(&v, 20);
+    assert(*atVector(&v, 0) == 10);
+    assert(*atVector(&v, 1) == 20);
+    free(v.data);
+}
+
+void test_atVector_requestToLastElement() {
+    vector v = createVector(0);
+    pushBack(&v, 10);
+    assert(*atVector(&v, v.size - 1) == 10);
+    free(v.data);
+}
+
+int *back(vector *v) {
+    if (v->size == 0) {
+        fprintf(stderr, "Error: back()\n");
+        exit(1);
+    }
+    return &v->data[v->size - 1];
+}
+
+void test_back_oneElementInVector() {
+    vector v = createVector(0);
+    pushBack(&v, 10);
+    assert(*back(&v) == 10);
+    free(v.data);
+}
+
+int *front(vector *v) {
+    if (v->size == 0) {
+        fprintf(stderr, "Error: front()\n");
+        exit(1);
+    }
+    return &v->data[0];
+}
+
+void test_front_oneElementInVector() {
+    vector v = createVector(0);
+    pushBack(&v, 10);
+    assert(*front(&v) == 10);
+    free(v.data);
+}
+
+void test() {
+    test_pushBack_emptyVector();
+    test_pushBack_fullVector();
+    test_popBack_notEmptyVector();
+    test_atVector_notEmptyVector();
+    test_atVector_requestToLastElement();
+    test_back_oneElementInVector();
+    test_front_oneElementInVector();
+}
